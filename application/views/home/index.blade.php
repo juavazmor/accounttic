@@ -20,7 +20,7 @@
 						<td>{{ $payment->concept }} </td>
 						<td>{{ $payment->amount }} </td>
 						<td>{{ $payment->is_paid }} </td>
-						<td>{{ $payment->payment_method()->find($payment->id)->first() }}</td>
+						<td></td>
 						<td>{{ $payment->account()->find($payment->id)->first()->name }} </td>
 					</tr>
 				@endforeach
