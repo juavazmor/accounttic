@@ -1,0 +1,35 @@
+/*
+*			BODY
+*/
+
+body { background: #f3f3f3; font-family: 'Merriweather Sans', sans-serif; }
+
+/*
+*			WRAPPER
+*/
+
+.wrapper { background: #fafafa;	padding: 5px; }
+.container-fluid { padding: 0; }
+
+/*
+*			HEADINGS
+*/
+
+h1 { margin-left: 10px;	text-shadow: 1px 1px #cccccc; }
+
+/*
+*			TABLES
+*/
+
+thead {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	color: #494949;
+}
+
+/*
+*			BUTTONS
+*/
+.btn-group { width: 100%; }
+.btn { width: 97%; }
