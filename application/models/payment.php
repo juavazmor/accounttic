@@ -16,4 +16,9 @@ class Payment extends Eloquent
 	{
 		return $this->belongs_to('Account');
 	}
+
+	public function method()
+	{
+		return $this->belongs_to('Method', 'payment_method_id');
+	}
 }
