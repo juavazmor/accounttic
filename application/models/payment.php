@@ -9,7 +9,7 @@ class Payment extends Eloquent
 
 	public function payment_method()
 	{
-		return $this->belongs_to('Payment_methods', 'payment_method_id');
+		return $this->has_one('Payment_Methods');
 	}
 
 	public function account()

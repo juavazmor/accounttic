@@ -1,6 +1,6 @@
 <?php
 
-class Payment_methods extends Eloquent 
+class Payment_Methods extends Eloquent 
 {
 	public static $table = 'payment_methods';
 

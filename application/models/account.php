@@ -1,6 +1,6 @@
 <?php
 
-class Accounts extends Eloquent 
+class Account extends Eloquent 
 {
 	public function payments()
 	{

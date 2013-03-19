@@ -14,7 +14,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="success">
+				@foreach($payments as $payment)
+					<tr>
+						<td>{{ $payment->job->client->id }} </td>
+						<td>{{ $payment->concept }} </td>
+						<td>{{ $payment->amount }} </td>
+						<td>{{ $payment->is_paid }} </td>
+						<td>{{ $payment->payment_method()->find($payment->id)->first() }}</td>
+						<td>{{ $payment->account()->find($payment->id)->first()->name }} </td>
+					</tr>
+				@endforeach
+				<!-- <tr class="success">
 					<td>1.230</td>
 					<td>RRSS Febrero</td>
 					<td>50</td>
@@ -48,7 +58,7 @@
 					<td>Directo</td>
 					<td>Dani Benítez</td>
 					<td>19/03/2013</td>
-				</tr>				
+				</tr>	 -->			
 			</tbody>
 		</table>
 	@endsection
