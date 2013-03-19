@@ -2,6 +2,8 @@
 
 class Payment extends Eloquent 
 {
+	// public $includes = array('job', 'account', 'method');
+
 	public function job()
 	{
 		return $this->belongs_to('Job');

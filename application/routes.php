@@ -2,6 +2,15 @@
 
 Route::get('/', 'payments@index');
 
+// user Resource
+Route::get('users', array('as' => 'users', 'uses' => 'users@index'));
+// Route::get('users/(:num)', array('as' => 'user', 'uses' => 'users@show'));
+Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
+Route::get('users/(:num)/edit', array('as' => 'edit_user', 'uses' => 'users@edit'));
+Route::post('users', 'users@create');
+Route::put('users/(:num)', 'users@update');
+Route::delete('users/(:any)', 'users@destroy');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
