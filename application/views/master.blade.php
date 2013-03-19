@@ -10,17 +10,21 @@
 </head>
 <body>
 	<div class="navbar">
-		<h1>Accounttic</h1>
+		<h1>accounttic</h1>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid well">
 		<div class="wrapper">
 			  <div class="row-fluid">
 			    <div class="span2">
 			      	<aside>
 			      		<div class="btn-group btn-group-vertical">
-							<li class="btn">New payment</li>
-							<li class="btn">New client</li>
-							<li class="btn">New company</li>
+			      			<li class="btn btn-primary"><i class="icon-home icon-white"></i>home</li>
+							<li class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i>payments</li>
+							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i>payment methods</li>						
+							<li class="btn btn-primary"><i class="icon-fire icon-white"></i>clients</li>
+							<li class="btn btn-primary"><i class="icon-briefcase icon-white"></i>companies</li>
+							<li class="btn btn-primary"><i class="icon-globe icon-white"></i>jobs</li>
+							<li class="btn btn-primary"><i class="icon-user icon-white"></i>users</li>
 						</div>
 					</aside>
 			    </div>

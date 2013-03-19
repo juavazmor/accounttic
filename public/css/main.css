@@ -2,31 +2,47 @@
 *			BODY
 */
 
-body { background: #f3f3f3; font-family: 'Merriweather Sans', sans-serif; }
+body { font-family: 'Merriweather Sans', sans-serif;}
+
+
+/*
+*			ASIDE
+*/
+/*aside { text-transform: uppercase;}*/
+
 
 /*
 *			WRAPPER
 */
 
-.wrapper { background: #fafafa;	padding: 5px; }
+.wrapper { margin: 5px; padding: 5px; }
 .container-fluid { padding: 0; }
 
 /*
 *			HEADINGS
 */
-
-h1 { margin-left: 10px;	text-shadow: 1px 1px #cccccc; }
+h1 {margin-left: 10px; color: black; text-shadow: 1px 1px #cccccc;}
+/*h1 { margin-left: 10px;	text-shadow: 1px 1px #8c939c; }*/
 
 /*
 *			TABLES
 */
 
-thead {	text-transform: uppercase; font-size: 12px;	font-weight: bold; color: #494949; }
+.table td {	text-align: center; }
+thead { text-transform: uppercase; font-size: 12px;	font-weight: 0; }
 
 .right { text-align: right !important; }
 
 /*
 *			BUTTONS
 */
-.btn-group { width: 100%; }
-.btn { width: 97%; }
+.btn-group { width: 90%; }
+aside .btn { width: 100%; text-align: left; }
+
+.buttons { width: 100%; }
+.create { position: absolute; float: right; }
+/*
+			ICONS
+*/
+
+[class^="icon-"], [class*=" icon-"] { margin-top: 2px; margin-right: 5px; }

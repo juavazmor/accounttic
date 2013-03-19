@@ -21,6 +21,7 @@
 							: 'Sí';
 
 						$date = new DateTime($payment->date);
+
 					?>
 					<tr>
 						<td class="right">{{ $payment->job->client->id }} </td>
@@ -32,43 +33,11 @@
 						<td>{{ $date->format('d/m/Y - H:i:s') }}</td>
 					</tr>
 
-				@endforeach
-				<!-- <tr class="success">
-					<td>1.230</td>
-					<td>RRSS Febrero</td>
-					<td>50</td>
-					<td>Sí</td>
-					<td>Directo</td>
-					<td>Dani Benítez</td>
-					<td>19/03/2013</td>
-				</tr>
-				<tr class="">
-					<td>1.230</td>
-					<td>RRSS Febrero</td>
-					<td>50</td>
-					<td>Sí</td>
-					<td>Directo</td>
-					<td>Dani Benítez</td>
-					<td>19/03/2013</td>
-				</tr>		
-				<tr class="">
-					<td>1.230</td>
-					<td>RRSS Febrero</td>
-					<td>50</td>
-					<td>Sí</td>
-					<td>Directo</td>
-					<td>Dani Benítez</td>
-					<td>19/03/2013</td>
-				</tr>				<tr class="">
-					<td>1.230</td>
-					<td>RRSS Febrero</td>
-					<td>50</td>
-					<td>Sí</td>
-					<td>Directo</td>
-					<td>Dani Benítez</td>
-					<td>19/03/2013</td>
-				</tr>	 -->			
+				@endforeach		
 			</tbody>
 		</table>
+		<div class="buttons">
+			<a href="#" class="btn btn-success" class="create"><i class="icon-plus icon-white"></i>new payment</a>
+		</div>
 	@endsection
 
