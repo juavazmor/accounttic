@@ -9,7 +9,7 @@ class Create_Clients_Table {
 			$table->string('name');
 			$table->string('email');
 			$table->string('phone');
-			$table->int('company_id');
+			$table->integer('company_id');
 			$table->timestamps();
 	});
 

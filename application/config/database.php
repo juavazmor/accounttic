@@ -72,7 +72,7 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'accounttic',
 			'username' => 'root',
-			'password' => 'datapass',
+			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
