@@ -1,0 +1,1 @@
+This is the /Applications/MAMP/htdocs/accounttic/application/views/client/index.blade.php view

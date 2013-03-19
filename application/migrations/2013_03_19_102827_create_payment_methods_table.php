@@ -1,10 +1,10 @@
 <?php
 
-class Create_Payments_Method_Table {    
+class Create_Payment_Methods_Table {    
 
 	public function up()
     {
-		Schema::create('method', function($table) {
+		Schema::create('payment_methods', function($table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->timestamps();
@@ -14,7 +14,7 @@ class Create_Payments_Method_Table {
 
 	public function down()
     {
-		Schema::drop('method');
+		Schema::drop('payment_methods');
 
     }
 

@@ -11,7 +11,7 @@ class Create_Payments_Table {
 			$table->boolean('is_paid');
 			$table->date('payment_date');
 			$table->integer('job_id');
-			$table->integer('payment_method');
+			$table->integer('payment_method_id');
 			$table->integer('account_id');
 			$table->timestamps();
 	});

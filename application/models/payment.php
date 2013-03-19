@@ -1,0 +1,19 @@
+<?php
+
+class Payment extends Eloquent 
+{
+	public function job()
+	{
+		return $this->belongs_to('Job');
+	}
+
+	public function payment_method()
+	{
+		return $this->belongs_to('Payment_methods', 'payment_method_id');
+	}
+
+	public function account()
+	{
+		return $this->belongs_to('Account');
+	}
+}
