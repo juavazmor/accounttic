@@ -15,15 +15,21 @@
 			</thead>
 			<tbody>
 				@foreach ( $payments as $payment )
-				
+					<?php
+						$is_paid = ($payment->is_paid == 0) 
+							? 'No' 
+							: 'Sí';
+
+						$date = new DateTime($payment->date);
+					?>
 					<tr>
-						<td>{{ $payment->job->client->id }} </td>
+						<td class="right">{{ $payment->job->client->id }} </td>
 						<td>{{ $payment->concept }} </td>
-						<td>{{ $payment->amount }} </td>
-						<td>{{ $payment->is_paid }} </td>
+						<td class="right">{{ $payment->amount }} </td>
+						<td>{{ $is_paid }} </td>
 						<td>{{ $payment->method->name }}</td>
 						<td>{{ $payment->account->name }}</td>
-						<td>{{ $payment->payment_date }}</td>
+						<td>{{ $date->format('d/m/Y - H:i:s') }}</td>
 					</tr>
 
 				@endforeach
