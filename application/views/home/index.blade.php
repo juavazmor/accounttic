@@ -14,15 +14,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($payments as $payment)
+				@foreach ( $payments as $payment )
+				
 					<tr>
 						<td>{{ $payment->job->client->id }} </td>
 						<td>{{ $payment->concept }} </td>
 						<td>{{ $payment->amount }} </td>
 						<td>{{ $payment->is_paid }} </td>
-						<td></td>
-						<td>{{ $payment->account()->find($payment->id)->first()->name }} </td>
+						<td>{{ $payment->method->name }}</td>
+						<td>{{ $payment->account->name }}</td>
+						<td>{{ $payment->payment_date }}</td>
 					</tr>
+
 				@endforeach
 				<!-- <tr class="success">
 					<td>1.230</td>
