@@ -15,6 +15,7 @@ Route::delete('users/(:num)', array('as' => 'delete_user', 'users@destroy'));
 Route::get('jobs', array('as' => 'jobs', 'uses' => 'jobs@index'));
 Route::get('jobs/(:any)', array('as' => 'job', 'uses' => 'jobs@show'));
 Route::get('jobs/new', array('as' => 'new_job', 'uses' => 'jobs@new'));
+Route::get('jobs/(:num)/remove', array('as' => 'new_job', 'uses' => 'jobs@remove'));
 Route::get('jobs/(:any)/edit', array('as' => 'edit_job', 'uses' => 'jobs@edit'));
 Route::post('jobs', 'jobs@create');
 Route::put('jobs/(:any)', 'jobs@update');
