@@ -28,7 +28,8 @@
 							<li class="btn btn-primary"><i class="icon-fire icon-white"></i>clients</li>
 							<li class="btn btn-primary"><i class="icon-briefcase icon-white"></i>companies</li>
 							<li class="btn btn-primary"><i class="icon-globe icon-white"></i>jobs</li>
-							<a href="/users"><li class="btn btn-primary"><i class="icon-user icon-white"></i>users</li></a>
+							<li class="btn btn-primary"><a href="/users"><i class="icon-user icon-white"></i>users</li></a>
+							<li class="btn btn-primary"><a href="/accounts"><i class="icon-user icon-white"></i>accounts</li></a>
 						</div>
 					</aside>
 			    </div>

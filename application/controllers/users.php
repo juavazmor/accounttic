@@ -31,14 +31,8 @@ class Users_Controller extends Base_Controller {
             'password' => Hash::make($password)
             ));
 
-        $account = new Account( array(
-            'user_id'   => $user->id,
-            'name'      => $user->name
-            ));
 
-        $user->account()->insert($account);
-
-        return Redirect::to_route('users');
+        return ( $user ) ? Redirect::to_route('users') : 'Hubo un error creando el usuario';
     }
 
 	// public function get_show($id)

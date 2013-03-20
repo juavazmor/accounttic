@@ -36,9 +36,4 @@ class User extends Eloquent
 					? $v
 					: false;
 	}
-
-	public function account()
-	{
-		return $this->has_one('Account');
-	}
 }

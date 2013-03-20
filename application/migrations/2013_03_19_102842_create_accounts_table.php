@@ -7,7 +7,6 @@ class Create_Accounts_Table {
 		Schema::create('accounts', function($table) {
 			$table->increments('id');
 			$table->string('name');
-			$table->integer('user_id');
 			$table->timestamps();
 	});
 

@@ -6,8 +6,10 @@ class Create_Jobs_Table {
     {
 		Schema::create('jobs', function($table) {
 			$table->increments('id');
-			$table->string('job');
+			$table->string('name');
 			$table->date('deadline');
+			$table->boolean('finished')->default(0);
+			$table->float('amount');
 			$table->integer('client_id');
 			$table->timestamps();
 	});

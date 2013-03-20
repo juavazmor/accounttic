@@ -9,7 +9,6 @@ class Create_Users_Table {
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('password');
-			$table->integer('account_id');
 			$table->timestamps();
 	});
 

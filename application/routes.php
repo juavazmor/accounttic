@@ -12,6 +12,14 @@ Route::post('users', 'users@create');
 Route::put('users/(:num)', 'users@update');
 Route::delete('users/(:num)', array('as' => 'delete_user', 'users@destroy'));
 
+// account Resource
+Route::get('accounts', array('as' => 'accounts', 'uses' => 'accounts@index'));
+Route::get('accounts/new', array('as' => 'new_account', 'uses' => 'accounts@new'));
+Route::get('accounts/(:num)/edit', array('as' => 'edit_account', 'uses' => 'accounts@edit'));
+Route::post('accounts', 'accounts@create');
+Route::put('accounts/(:any)', 'accounts@update');
+Route::delete('accounts/(:any)', 'accounts@destroy');
+
 // job Resource
 Route::get('jobs', array('as' => 'jobs', 'uses' => 'jobs@index'));
 Route::get('jobs/(:any)', array('as' => 'job', 'uses' => 'jobs@show'));
