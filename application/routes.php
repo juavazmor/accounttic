@@ -2,14 +2,20 @@
 
 Route::get('/', 'payments@index');
 
+// client Resource
+Route::get('clients', array('as' => 'clients', 'uses' => 'clients@index'));
+Route::get('clients/new', array('as' => 'new_client', 'uses' => 'clients@new'));
+Route::get('clients/(:any)/remove', array('as' => 'remove_client', 'uses' => 'clients@remove'));
+Route::get('clients/(:any)/edit', array('as' => 'edit_client', 'uses' => 'clients@edit'));
+Route::post('clients', 'clients@create');
+Route::delete('clients/(:any)', 'clients@destroy');
+
 // user Resource
 Route::get('users', array('as' => 'users', 'uses' => 'users@index'));
-// Route::get('users/(:num)', array('as' => 'user', 'uses' => 'users@show'));
 Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
 Route::get('users/(:num)/remove', array('as' => 'remove_user', 'uses' => 'users@remove'));
 Route::get('users/(:num)/edit', array('as' => 'edit_user', 'uses' => 'users@edit'));
 Route::post('users', 'users@create');
-Route::put('users/(:num)', 'users@update');
 Route::delete('users/(:num)', array('as' => 'delete_user', 'users@destroy'));
 
 // account Resource

@@ -62,7 +62,7 @@ class Jobs_Controller extends Base_Controller
 				'amount' 	=> $amount,
 				'deadline' 	=> $deadline) 
 		);
-		
+
 		if ( $validation !== false ) {
 			$clients = Client::get();
 			return View::make('job.new')
