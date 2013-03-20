@@ -23,7 +23,17 @@
 				<td>{{ $job->client->name }} </td>
 				<td>{{ $job->name }}</td>
 				<td>{{ number_format($job->amount, 2, ',', '.')  }}</td>
-				<td><a href="/jobs/{{ $job->id }}/edit" class="btn btn-warning"><i class="icon-pencil icon-white"></i>Edit</a> <a href="/jobs/{{ $job->id }}/remove" class="btn btn-danger"><i class="icon-remove icon-white"></i>Remove</a></td>
+				<td>
+					<a href="/jobs/{{ $job->id }}/edit" class="btn btn-warning">
+						<i class="icon-pencil icon-white"></i>
+						Edit
+					</a>
+
+					<a href="/jobs/{{ $job->id }}/remove" class="btn btn-danger">
+						<i class="icon-remove icon-white"></i>
+						Remove
+					</a>
+				</td>
 			</tr>
 			@endforeach
 

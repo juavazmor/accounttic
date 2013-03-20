@@ -10,7 +10,7 @@
 			<tr>
 				<td>User name</td>
 				<td>Email</td>
-				<td></td>
+				<td>Actions</td>
 			</tr>
 		</thead>
 
@@ -20,7 +20,17 @@
 				<tr>
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->email }}</td>
-					<td>{{ HTML::link_to_route('edit_user', 'Edit', array($user->id), array('class' => 'btn btn-warning') ) }}</td>
+					<td>
+						<a href="/users/{{ $user->id }}/edit" class="btn btn-warning">
+							<i class="icon-pencil icon-white"></i>
+							Edit
+						</a>
+
+						<a href="/users/{{ $user->id }}/remove" class="btn btn-danger">
+							<i class="icon-remove icon-white"></i>
+							Remove
+						</a>
+					</td>
 				</tr>
 
 			@endforeach

@@ -17,7 +17,7 @@ class Users_Controller extends Base_Controller {
         $email = Input::get('email');
         $password = Input::get('password');
 
-        $validation = User::validate( array('name' => $name, 'email' => $email, 'password' => $password) );
+        $validation = User::validate_post( array('name' => $name, 'email' => $email, 'password' => $password) );
 
         if ( $validation !== false ) {
             return View::make('user.new')
@@ -67,8 +67,21 @@ class Users_Controller extends Base_Controller {
     {
         $user = User::find($id);
 
-        $user->name = Input::get('name');
-        $user->email = Input::get('email');
+        $name = Input::get('name');
+        $email = Input::get('email');
+        $password = Input::get('password');
+
+        $validation = User::validate_put( array('name' => $name, 'email' => $email, 'password' => $password), $id );
+
+        if ( $validation !== false ) {
+
+            return View::make('user.edit')
+                        ->with('user', $user)
+                        ->with_errors($validation->errors);
+        }
+
+        $user->name = $name;
+        $user->email = $email;
         $user->password = Hash::make( Input::get('password') );
 
         if ( $user->save() )
@@ -77,10 +90,14 @@ class Users_Controller extends Base_Controller {
 
 	public function delete_destroy($id)
     {
+
+    }
+
+    public function get_remove($id) {
         $user = User::find($id);
+
         $user->delete();
 
         return Redirect::to_route('users');
     }
-
 }

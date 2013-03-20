@@ -27,6 +27,7 @@
 
 		<div>
 			{{ Form::submit('Create', array('class' => 'btn btn-success')) }}
+			{{ HTML::link_to_route('users', 'Cancel', '', array('class' => 'btn btn-warning') ) }}
 		</div>
 
 	{{ Form::close() }}
