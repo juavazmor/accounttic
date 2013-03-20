@@ -9,7 +9,7 @@ Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
 Route::get('users/(:num)/edit', array('as' => 'edit_user', 'uses' => 'users@edit'));
 Route::post('users', 'users@create');
 Route::put('users/(:num)', 'users@update');
-Route::delete('users/(:any)', 'users@destroy');
+Route::delete('users/(:num)', array('as' => 'delete_user', 'users@destroy'));
 
 // job Resource
 Route::get('jobs', array('as' => 'jobs', 'uses' => 'jobs@index'));

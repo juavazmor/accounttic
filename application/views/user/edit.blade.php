@@ -1,8 +1,10 @@
 @layout('master')
 
-@section('container')
+@section('heading')
 	<h3>Edit the User</h3>
+@endsection
 
+@section('container')
 	{{ Form::open('users/' . $user->id, 'PUT') }}
 
 		{{ Form::label('name', 'Your name and surname:') }}
@@ -17,7 +19,6 @@
 		{{ Form::hidden('id', $user->id ) }}
 		<div>
 			{{ Form::submit('Edit', array('class' => 'btn btn-success')) }}
-			{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
 		</div>
 
 	{{ Form::close() }}

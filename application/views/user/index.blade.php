@@ -1,14 +1,16 @@
 @layout('master')
 
-@section('container')
+@section('heading')
 	<h3>Users</h3>
+@endsection
 
+@section('container')
 	<table class="table table-hover table-striped table-bordered">
 		<thead>
 			<tr>
 				<td>User name</td>
 				<td>Email</td>
-				<td>Edit</td>
+				<td></td>
 			</tr>
 		</thead>
 
@@ -18,7 +20,7 @@
 				<tr>
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->email }}</td>
-					<td>{{ HTML::link_to_route('edit_user', 'Edit', $user->id)}}</td>
+					<td>{{ HTML::link_to_route('edit_user', 'Edit', array($user->id), array('class' => 'btn btn-warning') ) }}</td>
 				</tr>
 
 			@endforeach

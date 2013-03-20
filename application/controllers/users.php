@@ -2,14 +2,14 @@
 
 class Users_Controller extends Base_Controller {
 
-	public $restful = true;    
+	public $restful = true;
 
 	public function get_index()
     {
         $users = User::get();
         return View::make('user.index')
                 ->with('users', $users);
-    }    
+    }
 
 	public function post_create()
     {
@@ -31,7 +31,6 @@ class Users_Controller extends Base_Controller {
         $account->save();
 
         return Redirect::to_route('users');
-
     }
 
 	// public function get_show($id)
@@ -67,9 +66,12 @@ class Users_Controller extends Base_Controller {
             return Redirect::to_route('users');
     }
 
-	public function delete_destroy()
+	public function delete_destroy($id)
     {
-        
+        $user = User::find($id);
+        $user->delete();
+
+        return Redirect::to_route('users');
     }
 
 }
