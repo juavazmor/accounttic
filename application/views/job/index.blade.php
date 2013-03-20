@@ -38,4 +38,7 @@
 			</tr>
 		</tfoot>
 	</table>
+	<div class="buttons">
+		<a href="/jobs/new" class="btn btn-success"><i class="icon-plus icon-white"></i>New job</a>
+	</div>
 @endsection

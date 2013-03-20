@@ -46,3 +46,14 @@ aside .btn { width: 100%; text-align: left; }
 */
 
 [class^="icon-"], [class*=" icon-"] { margin-top: 2px; margin-right: 5px; }
+
+/*
+			FORMS
+*/
+
+.topmargin {
+	margin-top: 10px;
+}
+.big {
+	width: 86% !important;
+}
