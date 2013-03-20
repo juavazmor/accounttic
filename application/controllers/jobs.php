@@ -18,7 +18,9 @@ class Jobs_Controller extends Base_Controller
 	}
 
 	public function get_new() {
-		return View::make('job.new');
+		$clients = Client::get();
+		return View::make('job.new')
+			->with("clients", $clients);
 	}
 
 	public function get_remove($id) {
@@ -34,5 +36,16 @@ class Jobs_Controller extends Base_Controller
 		$client_id 	 = Input::get('client');
 		$amount		 = Input::get('amount');
 		$finished	 = Input::get('finished');
+		$deadline 	 = Input::get('deadline');
+
+		$job = Job::create(array(
+			"name" => $job_name,
+			"client_id" => $client_id,
+			"finished" => $finished,
+			"amount" => $amount,
+			"deadline" => $deadline
+		));
+
+		return Redirect::to_route("jobs");
 	}
 }

@@ -49,7 +49,6 @@
 		//If clicked, show the dialog
 		$('.btn-danger').click(function(event) {
 			event.preventDefault();
-			console.log(event);
 			$( "#dialog" ).dialog(
 			{
 				resizable: false,
@@ -58,7 +57,7 @@
 				{
 					"Confirm": function()
 					{
-						//document.location = event.delegateTarget.attributes[0].textContent;
+						document.location = event.delegateTarget.attributes[0].nodeValue;
 					},
 					"Cancel": function()
 					{
