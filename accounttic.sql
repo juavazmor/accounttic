@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-03-2013 a las 13:56:38
+-- Tiempo de generación: 20-03-2013 a las 16:35:31
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -32,7 +32,8 @@ INSERT INTO `accounts` (`id`, `name`, `user_id`, `created_at`, `updated_at`) VAL
 --
 
 INSERT INTO `clients` (`id`, `name`, `email`, `phone`, `company_id`, `created_at`, `updated_at`) VALUES
-(1, 'José María', 'info@tropicanmascotas.com', '', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 'José María', 'info@tropicanmascotas.com', '', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'test', 'test', '111', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 --
 -- Volcado de datos para la tabla `companies`
@@ -45,28 +46,16 @@ INSERT INTO `companies` (`id`, `name`, `CIF`, `address`, `phone`, `client_id`, `
 -- Volcado de datos para la tabla `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `job`, `deadline`, `client_id`, `created_at`, `updated_at`) VALUES
-(1, 'Web Tropican Mascotas', '2013-04-01 00:00:00', 1, '2013-03-19 00:00:00', '2013-03-19 00:00:00');
-
---
--- Volcado de datos para la tabla `laravel_migrations`
---
-
-INSERT INTO `laravel_migrations` (`bundle`, `name`, `batch`) VALUES
-('application', '2013_03_19_102323_create_clients_table', 1),
-('application', '2013_03_19_102402_create_users_table', 1),
-('application', '2013_03_19_102757_create_payments_table', 1),
-('application', '2013_03_19_102827_create_payment_methods_table', 1),
-('application', '2013_03_19_102842_create_accounts_table', 1),
-('application', '2013_03_19_102935_create_jobs_table', 1),
-('application', '2013_03_19_103017_create_companies_table', 1);
+INSERT INTO `jobs` (`id`, `deadline`, `client_id`, `created_at`, `updated_at`, `finished`, `amount`, `name`) VALUES
+(1, '2013-04-01 00:00:00', 1, '2013-03-19 00:00:00', '2013-03-19 00:00:00', 0, 1500, 'Web Tropican Mascotas');
 
 --
 -- Volcado de datos para la tabla `payments`
 --
 
 INSERT INTO `payments` (`id`, `concept`, `amount`, `is_paid`, `payment_date`, `job_id`, `payment_method_id`, `account_id`, `created_at`, `updated_at`) VALUES
-(1, 'Primer pago web', 500, 0, '2013-03-19 00:00:00', 1, 1, 1, '2013-03-19 00:00:00', '0000-00-00 00:00:00');
+(1, 'Primer pago web', 500, 0, '2013-03-19 00:00:00', 1, 1, 1, '2013-03-19 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Segundo pago web', 500, 0, '2013-03-30 00:00:00', 1, 1, 1, '2013-03-19 00:00:00', '2013-03-19 00:00:00');
 
 --
 -- Volcado de datos para la tabla `payment_methods`
@@ -80,7 +69,7 @@ INSERT INTO `payment_methods` (`id`, `name`, `created_at`, `updated_at`) VALUES
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `account_id`, `created_at`, `updated_at`) VALUES
-(1, 'Dani Benítez', 'dabntz@fourattic.com', '123456', 1, '2013-03-19 00:00:00', '2013-03-19 00:00:00');
+(1, 'Dani Benítez', 'dabntz@fourattic.com', '$2a$08$YkVBc3IxNkt6VzhCYkp1ZeLxrK.Bka8VQyuD1Wh1I2eaAd3QBUM86', 1, '2013-03-19 00:00:00', '2013-03-19 17:08:39');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

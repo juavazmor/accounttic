@@ -35,8 +35,11 @@ class Jobs_Controller extends Base_Controller
 		$job_name	 = Input::get('name');
 		$client_id 	 = Input::get('client');
 		$amount		 = Input::get('amount');
-		$finished	 = Input::get('finished');
+		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
 		$deadline 	 = Input::get('deadline');
+
+
+		$validation  = Job::validate_post(array($job_name, $amount, $deadline));
 
 		$job = Job::create(array(
 			"name" => $job_name,
