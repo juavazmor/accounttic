@@ -36,7 +36,7 @@ class Users_Controller extends Base_Controller {
             'name'      => $user->name
             ));
 
-        $account->save();
+        $user->account()->insert($account);
 
         return Redirect::to_route('users');
     }

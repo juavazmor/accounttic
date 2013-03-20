@@ -37,5 +37,5 @@
 		</tbody>
 	</table>
 
-	{{ HTML::link_to_route( 'new_user', 'New User', '', array('class' => 'btn') )}}
+	{{ HTML::link_to_route( 'new_user', 'New User', '', array('class' => 'btn btn-success') )}}
 @endsection
