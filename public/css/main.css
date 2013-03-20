@@ -9,7 +9,7 @@ body { font-family: 'Merriweather Sans', sans-serif;}
 *			ASIDE
 */
 /*aside { text-transform: uppercase;}*/
-
+aside a, aside a:visited, aside a:hover {color:white; text-decoration: none;}
 
 /*
 *			WRAPPER

@@ -15,12 +15,20 @@ class Users_Controller extends Base_Controller {
     {
         $name = Input::get('name');
         $email = Input::get('email');
-        $password = Hash::make( Input::get('password') );
+        $password = Input::get('password');
+
+        $validation = User::validate( array('name' => $name, 'email' => $email, 'password' => $password) );
+
+        if ( $validation !== false ) {
+            return View::make('user.new')
+                        ->with('old_inputs', Input::all())
+                        ->with_errors($validation->errors);
+        }
 
         $user = User::create(array(
             'name' => $name,
             'email' => $email,
-            'password' => $password
+            'password' => Hash::make($password)
             ));
 
         $account = new Account( array(
@@ -49,10 +57,11 @@ class Users_Controller extends Base_Controller {
                 ->with('user', $user);
     }
 
-	public function get_new()
+	public function get_new($old_inputs = '')
     {
-        return View::make('user.new');
+        return View::make('user.new')->with('old_inputs', $old_inputs );
     }
+
 
 	public function put_update($id)
     {
