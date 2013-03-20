@@ -29,7 +29,8 @@
 					</aside>
 			    </div>
 			    <div class="span10">
-			      @yield('container')
+			    	@yield('heading')
+			        @yield('container')
 			    </div>
 			  </div>
 			</div>

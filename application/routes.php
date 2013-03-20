@@ -11,6 +11,15 @@ Route::post('users', 'users@create');
 Route::put('users/(:num)', 'users@update');
 Route::delete('users/(:any)', 'users@destroy');
 
+// job Resource
+Route::get('jobs', array('as' => 'jobs', 'uses' => 'jobs@index'));
+Route::get('jobs/(:any)', array('as' => 'job', 'uses' => 'jobs@show'));
+Route::get('jobs/new', array('as' => 'new_job', 'uses' => 'jobs@new'));
+Route::get('jobs/(:any)/edit', array('as' => 'edit_job', 'uses' => 'jobs@edit'));
+Route::post('jobs', 'jobs@create');
+Route::put('jobs/(:any)', 'jobs@update');
+Route::delete('jobs/(:any)', 'jobs@destroy');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
