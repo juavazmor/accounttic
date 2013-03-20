@@ -24,8 +24,8 @@ SET time_zone = "+00:00";
 -- Volcado de datos para la tabla `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `name`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Dani Benítez', 1, '2013-03-19 00:00:00', '2013-03-19 00:00:00');
+INSERT INTO `accounts` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Dani Benítez', '2013-03-19 00:00:00', '2013-03-19 00:00:00');
 
 --
 -- Volcado de datos para la tabla `clients`
@@ -68,8 +68,8 @@ INSERT INTO `payment_methods` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `account_id`, `created_at`, `updated_at`) VALUES
-(1, 'Dani Benítez', 'dabntz@fourattic.com', '$2a$08$YkVBc3IxNkt6VzhCYkp1ZeLxrK.Bka8VQyuD1Wh1I2eaAd3QBUM86', 1, '2013-03-19 00:00:00', '2013-03-19 17:08:39');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'Dani Benítez', 'dabntz@fourattic.com', '$2a$08$YkVBc3IxNkt6VzhCYkp1ZeLxrK.Bka8VQyuD1Wh1I2eaAd3QBUM86', '2013-03-19 00:00:00', '2013-03-19 17:08:39');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

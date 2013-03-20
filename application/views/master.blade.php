@@ -27,7 +27,7 @@
 							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i>payment methods</li>						
 							<li class="btn btn-primary"><i class="icon-fire icon-white"></i>clients</li>
 							<li class="btn btn-primary"><i class="icon-briefcase icon-white"></i>companies</li>
-							<li class="btn btn-primary"><i class="icon-globe icon-white"></i>jobs</li>
+							<li class="btn btn-primary"><a href="/jobs"><i class="icon-globe icon-white"></i>jobs</a></li>
 							<li class="btn btn-primary"><a href="/users"><i class="icon-user icon-white"></i>users</li></a>
 							<li class="btn btn-primary"><a href="/accounts"><i class="icon-user icon-white"></i>accounts</li></a>
 						</div>
