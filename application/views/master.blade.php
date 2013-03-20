@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="navbar">
-		<h1>accounttic</h1>
+		<h1><a href="/">accounttic</a></h1>
 	</div>
 	<div class="container-fluid well">
 		<div class="wrapper">
@@ -22,7 +22,7 @@
 			    <div class="span2">
 			      	<aside>
 			      		<div class="btn-group btn-group-vertical">
-			      			<li class="btn btn-primary"><i class="icon-home icon-white"></i>home</li>
+			      			<li class="btn btn-primary"><a href="/"><i class="icon-home icon-white"></i>home</li></a>
 							<li class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i>payments</li>
 							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i>payment methods</li>						
 							<li class="btn btn-primary"><i class="icon-fire icon-white"></i>clients</li>
