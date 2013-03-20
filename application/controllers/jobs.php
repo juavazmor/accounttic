@@ -20,7 +20,11 @@ class Jobs_Controller extends Base_Controller
 	public function get_new() {
 		$clients = Client::get();
 		return View::make('job.new')
-			->with("clients", $clients);
+			->with(array(
+				"clients" => $clients,
+				"old_inputs" => ''
+				)
+			);
 	}
 
 	public function get_remove($id) {
@@ -32,14 +36,29 @@ class Jobs_Controller extends Base_Controller
 	}
 
 	public function post_create() {
+
 		$job_name	 = Input::get('name');
 		$client_id 	 = Input::get('client');
 		$amount		 = Input::get('amount');
 		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
-		$deadline 	 = Input::get('deadline');
+		$deadline 	 = new DateTime(Input::get('deadline'));
 
-
-		$validation  = Job::validate_post(array($job_name, $amount, $deadline));
+		$validation  = Job::validate_post( array(
+				'name' 	 	=> $job_name,
+				'amount' 	=> $amount,
+				'deadline' 	=> $deadline) 
+		);
+		
+		if ( $validation !== false ) {
+			$clients = Client::get();
+			return View::make('job.new')
+					->with(array(
+						'old_inputs' => Input::all(),
+						'clients' 	 => $clients
+						)
+					)
+					->with_errors($validation->errors);
+		} 
 
 		$job = Job::create(array(
 			"name" => $job_name,

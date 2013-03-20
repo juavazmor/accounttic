@@ -29,7 +29,7 @@
 							<li class="btn btn-primary"><i class="icon-briefcase icon-white"></i>companies</li>
 							<li class="btn btn-primary"><a href="/jobs"><i class="icon-globe icon-white"></i>jobs</a></li>
 							<li class="btn btn-primary"><a href="/users"><i class="icon-user icon-white"></i>users</li></a>
-							<li class="btn btn-primary"><a href="/accounts"><i class="icon-user icon-white"></i>accounts</li></a>
+							<li class="btn btn-primary"><a href="/accounts"><i class="icon-book icon-white"></i>accounts</li></a>
 						</div>
 					</aside>
 			    </div>
@@ -70,7 +70,7 @@
 	}
 	$(function() {
 			$('#dp1').datepicker({
-				format: 'mm-dd-yyyy'
+				format: 'dd/mm/yyyy'
 			});
 		});
 </script>

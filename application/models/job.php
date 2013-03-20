@@ -3,7 +3,7 @@
 class Job extends Eloquent 
 {
 
-	public static $validation = array(
+	public static $rules = array(
 		'name'		=> 'required',
 		'amount'	=> 'required|numeric',
 		'deadline'  => 'required'
@@ -15,13 +15,13 @@ class Job extends Eloquent
 	);
 
 
-	public function validate_post($input) 
+	public static function validate_post($input) 
 	{
-		$v = Validator::make($input, static::$validation, static::$messages);
+		$v = Validator::make( $input, static::$rules, static::$messages );
 
 		return $v->fails() 
-				? $v
-				: false;
+					? $v
+					: false;
 	}
 
 	public function client()
