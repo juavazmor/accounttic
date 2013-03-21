@@ -33,9 +33,10 @@
 						<i class="icon-remove icon-white"></i>
 						Remove
 					</a>
-				</td>
+				</td> 
 			</tr>
 			@endforeach
+
 
 		</tbody>
 		<tfoot>			

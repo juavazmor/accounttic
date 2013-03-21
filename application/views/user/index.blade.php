@@ -26,10 +26,12 @@
 							Edit
 						</a>
 
-						<a href="/users/{{ $user->id }}/remove" class="btn btn-danger">
-							<i class="icon-remove icon-white"></i>
-							Remove
-						</a>
+						@if( $user-> id !== Auth::user()->id)
+							<a href="/users/{{ $user->id }}/remove" class="btn btn-danger">
+								<i class="icon-remove icon-white"></i>
+								Remove
+							</a>
+						@endif
 					</td>
 				</tr>
 

@@ -1,5 +1,9 @@
 <?php
 
+Route::get('login', array('as' => 'login', 'uses' => 'login@index'));
+Route::post('login', 'login@authenticate');
+Route::get('logout', 'login@logout');
+
 Route::get('/', 'payments@index');
 
 // client Resource
@@ -103,8 +107,10 @@ Event::listen('500', function()
 
 Route::filter('before', function()
 {
-	// Do stuff before every request to your application...
+	
 });
+
+Route::filter('pattern: ^(?!login)*', 'auth');
 
 Route::filter('after', function($response)
 {
