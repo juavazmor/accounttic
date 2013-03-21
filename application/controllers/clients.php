@@ -2,12 +2,14 @@
 
 class Clients_Controller extends Base_Controller {
 
-	public $restful = true;    
+	public $restful = true;
 
 	public function get_index()
     {
-
-    }    
+        $clients = Client::get();
+        return View::make('client.index')
+                ->with('clients', $clients);
+    }
 
 	public function post_index()
     {
