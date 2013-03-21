@@ -24,7 +24,7 @@
 			      	<aside>
 			      		<div class="btn-group btn-group-vertical">
 			      			<li class="btn btn-primary"><a href="/"><i class="icon-home icon-white"></i>home</li></a>
-							<li class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i>payments</li>
+							<li class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i><a href="/payments">payments</a></li>
 							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i><a href="/methods/">payment methods</a></li>						
 							<li class="btn btn-primary"><a href="/clients"><i class="icon-fire icon-white"></i>clients</a></li>
 							<li class="btn btn-primary"><a href="/jobs"><i class="icon-globe icon-white"></i>jobs</a></li>
@@ -48,7 +48,7 @@
 
 	window.onload = function() {
 		//If clicked, show the dialog
-		$('.btn-danger').click(function(event) {
+		$('.btn-danger, .danger').click(function(event) {
 			event.preventDefault();
 			$( "#dialog" ).dialog(
 			{
@@ -69,10 +69,26 @@
 		});  		
 	}
 	$(function() {
+		$("#ispaid").on('click', function() {
+			var checked = $("#ispaid").is(':checked')
+			
+			if ( checked ) 
+			{
+				$("#paymentdate").show("fast");
+			} 
+			else 
+			{
+				$("#paymentdate").hide("fast");
+			}
+		});
+		
 			$('#dp1').datepicker({
 				format: 'dd/mm/yyyy'
 			});
 		});
+
+			
+
 </script>
 	{{ HTML::script('/js/bootstrap.min.js') }}
 

@@ -34,6 +34,9 @@ thead { text-transform: uppercase; font-size: 12px;	font-weight: 0; }
 
 .right { text-align: right !important; }
 
+.paymentdate { display: none; }
+.paymentdateshow { display: block; }
+
 /*
 *			BUTTONS
 */

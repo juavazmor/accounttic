@@ -31,11 +31,11 @@
 		</div>
 		{{ Form::label('deadline', 'Deadline') }}
 		<div class="input-append date" id="dp3" data-date="{{ date("d/m/Y") }}" data-date-format="dd/mm/yyyy">
-			{{ Form::text('deadline', $date->format("d/m/Y"), array("class" => "span2 big", "id" => "dp1") ) }}
+			{{ Form::text('deadline', $date->format("m/d/Y"), array("class" => "span2 big", "id" => "dp1") ) }}
 		<span class="add-on"><i class="icon-calendar"></i></span>
 		</div>
 		{{ Form::label('finished', 'Finished?')}}
-		{{ Form::checkbox('finished') }}
+		{{ Form::checkbox('finished', 1, ($job->finished == 1) ? true : false ) }}
 		<div class="topmargin">
 			{{ Form::submit('Edit', array("class" => "btn btn-success")) }}
 			{{ HTML::link_to_route('jobs', 'Cancel', '', array('class' => 'btn btn-warning') ) }}

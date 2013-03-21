@@ -52,6 +52,16 @@ Route::get('methods/(:num)/edit', array('as' => 'edit_method', 'uses' => 'method
 Route::post('methods', 'methods@create');
 Route::put('methods/(:any)', 'methods@update');
 Route::delete('methods/(:any)', 'methods@destroy');
+
+// payment Resource
+Route::get('payments', array('as' => 'payments', 'uses' => 'payments@index'));
+Route::get('payments/(:any)', array('as' => 'payment', 'uses' => 'payments@show'));
+Route::get('payments/new', array('as' => 'new_payment', 'uses' => 'payments@new'));
+Route::get('payments/(:num)/remove', array('as' => 'remove_payment', 'uses' => 'payments@remove'));
+Route::get('payments/(:any)/edit', array('as' => 'edit_payment', 'uses' => 'payments@edit'));
+Route::post('payments', 'payments@create');
+Route::put('payments/(:any)', 'payments@update');
+Route::delete('payments/(:any)', 'payments@destroy');
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
