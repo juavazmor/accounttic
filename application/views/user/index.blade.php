@@ -10,7 +10,7 @@
 			<tr>
 				<td>User name</td>
 				<td>Email</td>
-				<td>Actions</td>
+				<td width="25%">Actions</td>
 			</tr>
 		</thead>
 

@@ -9,7 +9,7 @@
 		<thead>
 			<tr>
 				<td>Account name</td>
-				<td>Actions</td>
+				<td width="25%">Actions</td>
 			</tr>
 		</thead>
 
