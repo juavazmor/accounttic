@@ -82,10 +82,10 @@ class Users_Controller extends Base_Controller {
             return Redirect::to_route('users');
     }
 
-	public function delete_destroy($id)
-    {
+	// public function delete_destroy($id)
+ //    {
 
-    }
+ //    }
 
     public function get_remove($id) {
         $user = User::find($id);

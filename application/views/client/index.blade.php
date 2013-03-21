@@ -23,7 +23,7 @@
 					<td>{{ $client->id }}</td>
 					<td>{{ $client->name }}</td>
 					<td>{{ $client->email }}</td>
-					<td>{{ $client->phone }}</td>
+					<td>{{ $client->phone ? $client->phone : '-' }}</td>
 					<td>
 						<a href="/clients/{{ $client->id }}/edit" class="btn btn-warning">
 							<i class="icon-pencil icon-white"></i>
