@@ -36,6 +36,16 @@ Route::post('jobs', 'jobs@create');
 Route::put('jobs/(:any)', 'jobs@update');
 Route::delete('jobs/(:any)', 'jobs@destroy');
 
+
+// method Resource
+Route::get('methods', array('as' => 'methods', 'uses' => 'methods@index'));
+Route::get('methods/(:any)', array('as' => 'method', 'uses' => 'methods@show'));
+Route::get('methods/new', array('as' => 'new_method', 'uses' => 'methods@new'));
+Route::get('methods/(:num)/remove', array('as' => 'remove_method', 'uses' => 'methods@remove'));
+Route::get('methods/(:num)/edit', array('as' => 'edit_method', 'uses' => 'methods@edit'));
+Route::post('methods', 'methods@create');
+Route::put('methods/(:any)', 'methods@update');
+Route::delete('methods/(:any)', 'methods@destroy');
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

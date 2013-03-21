@@ -24,7 +24,7 @@
 			      		<div class="btn-group btn-group-vertical">
 			      			<li class="btn btn-primary"><a href="/"><i class="icon-home icon-white"></i>home</li></a>
 							<li class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i>payments</li>
-							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i>payment methods</li>						
+							<li class="btn btn-primary"><i class="icon-envelope icon-white"></i><a href="/methods/">payment methods</a></li>						
 							<li class="btn btn-primary"><a href="/clients"><i class="icon-fire icon-white"></i>clients</a></li>
 							<li class="btn btn-primary"><a href="/jobs"><i class="icon-globe icon-white"></i>jobs</a></li>
 							<li class="btn btn-primary"><a href="/users"><i class="icon-user icon-white"></i>users</li></a>
