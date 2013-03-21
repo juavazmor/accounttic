@@ -7,9 +7,11 @@
 
 @section('container')
 	<?php
-		foreach ($clients as $client) 
-		{
-			$clients_array[$client->id] = $client->name;
+		if ( count($clients) == 0 ) {
+			$clients_array = array();
+		} else {
+			foreach ($clients as $client)
+				$clients_array[$client->id] = $client->name;
 		}
 
 		$date = new DateTime($job->deadline);

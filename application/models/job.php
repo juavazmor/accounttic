@@ -4,6 +4,7 @@ class Job extends Eloquent
 {
 
 	public static $rules = array(
+		'client_id' => 'required',
 		'name'		=> 'required',
 		'amount'	=> 'required|numeric',
 		'deadline'  => 'required'
@@ -11,7 +12,8 @@ class Job extends Eloquent
 
 	public static $messages   = array(
 		'required' 	=> 'The :attribute field is required.',
-		'numeric'	=> 'This value must be numeric.'
+		'numeric'	=> 'This value must be numeric.',
+		'client_id_required' => 'You must provide a client.'
 	);
 
 

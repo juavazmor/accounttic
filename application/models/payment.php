@@ -5,6 +5,9 @@ class Payment extends Eloquent
 	public static $rules = array(
 		"concept" => "required",
 		"amount" => "required|numeric",
+		'method'  => 'required',
+		'job' => 'required',
+		'account' => 'required'
 		);
 
 	public static $messages = array(

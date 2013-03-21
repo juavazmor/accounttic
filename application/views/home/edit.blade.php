@@ -9,16 +9,31 @@
 
 	<?php
 		/* */
-		foreach ($jobs as $job) {
-			$job_array[$job->id] = $job->name;
+		if ( !count($jobs) )
+			$job_array = array();
+		else
+		{
+			foreach ($jobs as $job) {
+				$job_array[$job->id] = $job->name;
+			}
 		}
 
-		foreach ($methods as $method) {
-			$method_array[$method->id] = $method->name;
+		if ( !count($methods) )
+			$method_array = array();
+		else
+		{
+			foreach ($methods as $method) {
+				$method_array[$method->id] = $method->name;
+			}
 		}
 
-		foreach ($accounts as $account) {
-			$account_array[$account->id] = $account->name;
+		if ( !count($accounts) )
+			$account_array = array();
+		else
+		{
+			foreach ($accounts as $account) {
+				$account_array[$account->id] = $account->name;
+			}
 		}
 
 		$date = new DateTime($payment->payment_date);

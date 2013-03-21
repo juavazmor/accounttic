@@ -3,7 +3,6 @@
 @section('container')
 	<h3>Create a New Client</h3>
 
-
 	{{ Form::open('clients/') }}
 		{{ Form::label('name', 'Client\'s name:') }}
 		{{ Form::text('name', $old_inputs ? $old_inputs['name'] : '') }}
@@ -22,8 +21,6 @@
 		<div class="control-group{{ $errors->has('phone') ? ' error' : '' }}">
 			<p class=control-label>{{ $errors->first('phone') }}</p>
 		</div>
-
-
 
 		<div>
 			{{ Form::submit('Create', array('class' => 'btn btn-success')) }}

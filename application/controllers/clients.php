@@ -11,8 +11,9 @@ class Clients_Controller extends Base_Controller {
                 ->with('clients', $clients);
     }
 
-	public function post_create()
+	public function post_create($redirected = false)
     {
+
         $name = Input::get('name');
         $email = Input::get('email');
         $phone = Input::get('phone');
@@ -31,8 +32,15 @@ class Clients_Controller extends Base_Controller {
             'phone' => $phone
             ));
 
+        if ( $client )
+        {
+            if ( $redirected )
+                return Redirect::to('from_uri');
+            else
+                return Redirect::to_route('clients');
+        }
 
-        return ( $client ) ? Redirect::to_route('clients') : 'Hubo un error creando el cliente';
+        return 'Hubo un error creando el cliente';
     }
 
 	// public function get_show()

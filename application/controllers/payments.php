@@ -59,7 +59,10 @@ class Payments_Controller extends Base_Controller {
 
 		$validation = Payment::validate_post( array(
        		'concept' => $concept,
-       		'amount'  => $amount
+       		'amount'  => $amount,
+       		'job'	  => $job,
+       		'method'  => $method,
+       		'account' => $account
        		) 
         );
 

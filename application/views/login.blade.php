@@ -12,9 +12,6 @@
 </head>
 <body>
 	<div class="login_form well">
-		<header>
-			<h3>Login</h3>
-		</header>
 
 		{{ Form::open() }}
 

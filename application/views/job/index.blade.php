@@ -16,6 +16,7 @@
 			</tr>
 		</thead>
 		<tbody>
+
 			@foreach($jobs as $job)
 				<?php $sum += $job->amount; ?>
 			<tr>

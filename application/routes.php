@@ -123,6 +123,13 @@ Route::filter('before', function()
 
 Route::filter('pattern: ^(?!login)*', 'auth');
 
+
+
+Route::filter('already_logged', function()
+{
+	if ( Auth::check() ) return Redirect::to('/');
+});
+
 Route::filter('after', function($response)
 {
 	// Do stuff after every request to your application...
@@ -135,5 +142,6 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest())
+		return Redirect::to('login');
 });

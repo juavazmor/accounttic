@@ -55,9 +55,10 @@ class Jobs_Controller extends Base_Controller
 		$client_id 	 = Input::get('client');
 		$amount		 = Input::get('amount');
 		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
-		$deadline 	 = new DateTime(Input::get('deadline'));
+		$deadline 	 = Input::get('deadline');
 
 		$validation  = Job::validate_post( array(
+				'client_id' => $client_id,
 				'name' 	 	=> $job_name,
 				'amount' 	=> $amount,
 				'deadline' 	=> $deadline) 
@@ -79,7 +80,7 @@ class Jobs_Controller extends Base_Controller
 			"client_id" => $client_id,
 			"finished" => $finished,
 			"amount" => $amount,
-			"deadline" => $deadline
+			"deadline" => new DateTime($deadline)
 		));
 
 		return Redirect::to_route("jobs");
@@ -121,4 +122,5 @@ class Jobs_Controller extends Base_Controller
         if ( $job->save() )
             return Redirect::to_route('jobs');
 	}
+
 }
