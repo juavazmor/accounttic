@@ -1,4 +1,13 @@
 /*
+*			LOGIN
+*/
+body { }
+.login_form { width: 230px;  margin: 100px auto 0;}
+.login_form label { margin-top: 15px;}
+.login_form h3 { width: 70px; margin: 0 auto; }
+.login_form input[type="submit"] { width: 64px; margin: 10px auto 0 80px;}
+
+/*
 *			BODY
 */
 

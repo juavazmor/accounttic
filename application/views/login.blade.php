@@ -11,7 +11,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="login_form">
+	<div class="login_form well">
 		<header>
 			<h3>Login</h3>
 		</header>
@@ -30,11 +30,9 @@
 				<p class=control-label>{{ $errors->first('password') }}</p>
 			</div>
 
-		<footer>
 			<div>
 			{{ Form::submit('Login', array('class' => 'btn btn-success')) }}
 			</div>
-		</footer>
 
 		{{ Form::close() }}
 	</div>
