@@ -1,8 +1,8 @@
 @layout('master')
 
 @section('container')
-	<h3>Create a New User</h3>
 
+	<h3>Create a New User</h3>
 
 	{{ Form::open('users/') }}
 		{{ Form::label('name', 'Your name and surname:') }}
@@ -22,8 +22,6 @@
 		<div class="control-group{{ $errors->has('password') ? ' error' : '' }}">
 			<p class=control-label>{{ $errors->first('password') }}</p>
 		</div>
-
-
 
 		<div>
 			{{ Form::submit('Create', array('class' => 'btn btn-success')) }}

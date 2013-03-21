@@ -18,6 +18,8 @@
 				$sum = 0;
 			?>
 				@foreach ( $payments as $payment )
+
+				
 					<?php
 						$sum += $payment->amount;
 						$is_paid = ($payment->is_paid == 0) 

@@ -24,6 +24,7 @@ Route::post('users', 'users@create');
 Route::put('users/(:num)', 'users@update');
 Route::delete('users/(:num)', array('as' => 'delete_user', 'users@destroy'));
 
+
 // account Resource
 Route::get('accounts', array('as' => 'accounts', 'uses' => 'accounts@index'));
 Route::get('accounts/new', array('as' => 'new_account', 'uses' => 'accounts@new'));
