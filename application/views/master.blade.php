@@ -15,7 +15,7 @@
 <body>
 	<div class="navbar">
 		<h1><a href="/">accounttic</a></h1>
-		<a href="logout" title="Logout" class="logout btn">Logout</a>
+		<a href="logout" title="Logout" class="logout btn btn-info"><i class="icon-off icon-white"></i>Logout</a>
 	</div>
 	<div class="container-fluid well">
 		<div class="wrapper">
