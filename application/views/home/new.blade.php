@@ -8,7 +8,7 @@
 @section('container')
 	<?php
 		/* */
-		if ( !count($jobs) )
+		if ( count($jobs) == 0 )
 			$job_array = array();
 		else
 		{
@@ -17,7 +17,7 @@
 			}
 		}
 
-		if ( !count($methods) )
+		if ( count($methods) == 0 )
 			$method_array = array();
 		else
 		{
@@ -26,7 +26,7 @@
 			}
 		}
 
-		if ( !count($accounts) )
+		if ( count($accounts) == 0 )
 			$account_array = array();
 		else
 		{

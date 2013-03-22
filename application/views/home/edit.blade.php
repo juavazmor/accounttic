@@ -9,7 +9,7 @@
 
 	<?php
 		/* */
-		if ( !count($jobs) )
+		if ( count($jobs) == 0 )
 			$job_array = array();
 		else
 		{
@@ -18,7 +18,7 @@
 			}
 		}
 
-		if ( !count($methods) )
+		if ( count($methods) == 0 )
 			$method_array = array();
 		else
 		{
@@ -27,7 +27,7 @@
 			}
 		}
 
-		if ( !count($accounts) )
+		if ( count($accounts) == 0 )
 			$account_array = array();
 		else
 		{
@@ -64,8 +64,14 @@
 		{{ Form::select('job', $job_array, $payment->job_id ) }}
 		{{ Form::label('method', 'Payment method' ) }}
 		{{ Form::select('method',  $method_array, $payment->payment_method_id ) }}
+		<div class="control-group{{ $errors->has('method') ? ' error' : '' }}">
+			<p class=control-label>{{ $errors->first('method') }}</p>
+		</div>
 		{{ Form::label('account', 'Account') }}
 		{{ Form::select('account', $account_array, $payment->account_id ) }}
+		<div class="control-group{{ $errors->has('account') ? ' error' : '' }}">
+			<p class=control-label>{{ $errors->first('account') }}</p>
+		</div>
 		<div>
 			{{ Form::submit('Edit', array('class' => 'btn btn-success')) }}
 			{{ HTML::link_to_route('payments', 'Cancel', '', array('class' => 'btn btn-warning')) }}

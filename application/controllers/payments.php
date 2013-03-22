@@ -16,9 +16,7 @@ class Payments_Controller extends Base_Controller {
 		$methods = Method::get();
 		$accounts = Account::get();
 
-		if ( count($methods) == 0 )
-			return View::make('error.500');
-
+		
 		return View::make('home.new')
 			->with(array(
 				'jobs' => $jobs,
