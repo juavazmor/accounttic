@@ -86,7 +86,7 @@ class Jobs_Controller extends Base_Controller
 		return Redirect::to_route("jobs");
 	}
 
-	public function put_update($id) {
+	public function put_update( $id ) {
 
 		$job = Job::find($id);
 
@@ -96,20 +96,20 @@ class Jobs_Controller extends Base_Controller
 		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
 		$deadline 	 = new DateTime(Input::get('deadline'));
 
+
+
 		$validation  = Job::validate_post( array(
+				'client_id' => $client_id,
 				'name' 	 	=> $job_name,
 				'amount' 	=> $amount,
-				'deadline' 	=> $deadline) 
+				'deadline' 	=> $deadline
+				) 
 		);
 
         if ( $validation !== false ) {
-
-			return View::make('job.new')
-					->with(array(
-						'old_inputs' => Input::all(),
-						'clients' 	 => $clients
-						)
-					)
+			$clients = Client::get();
+			dd($validation->errors);
+			return Redirect::to_route('edit_job', array('id' => $id) )
 					->with_errors($validation->errors);
         }
 
