@@ -15,7 +15,7 @@
 		}
 
 	?>
-	{{ Form::open('/jobs/') }}
+	{{ Form::open('/jobs/', 'POST', array('enctype' => 'multipart/form-data') ) }}
 		{{ Form::label('name', 'Name of the job') }}
 		{{ Form::text('name', $old_inputs ? $old_inputs['name'] : '') }}
 		<div class="control-group{{ $errors->has('name') ? ' error' : '' }}">
@@ -44,6 +44,11 @@
 			<p class=control-label>{{ $errors->first('deadline') }}</p>
 		</div>
 
+		{{ Form::label('budget', 'PDF Budget') }}
+		{{ Form::file('budget') }}
+		<div class="control-group{{ $errors->has('budget') ? ' error' : '' }}">
+			<p class=control-label>{{ $errors->first('budget') }}</p>
+		</div>
 		{{ Form::label('finished', 'Finished?')}}
 		{{ Form::checkbox('finished') }}
 		<div class="topmargin">

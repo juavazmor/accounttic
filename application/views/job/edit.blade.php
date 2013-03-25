@@ -18,7 +18,7 @@
 
 	?>
 
-	{{ Form::open('/jobs/' . $job->id, 'PUT') }}
+	{{ Form::open('/jobs/' . $job->id, 'PUT', array('enctype' => 'multipart/form-data') ) }}
 		{{ Form::label('name', 'Name of the job') }}
 		{{ Form::text('name', $job->name) }}
 		<div class="control-group{{ $errors->has('name') ? ' error' : '' }}">
@@ -36,6 +36,12 @@
 			{{ Form::text('deadline', $date->format("m/d/Y"), array("class" => "span2 big", "id" => "dp1") ) }}
 		<span class="add-on"><i class="icon-calendar"></i></span>
 		</div>
+		{{ Form::label('budget', 'PDF Budget') }}
+		{{ Form::file('budget') }}
+		<div class="control-group{{ $errors->has('budget') ? ' error' : '' }}">
+			<p class=control-label>{{ $errors->first('budget') }}</p>
+		</div>
+
 		{{ Form::label('finished', 'Finished?')}}
 		{{ Form::checkbox('finished', 1, ($job->finished == 1) ? true : false ) }}
 		<div class="topmargin">

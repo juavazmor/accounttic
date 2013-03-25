@@ -7,7 +7,8 @@ class Job extends Eloquent
 		'client_id' => 'required',
 		'name'		=> 'required',
 		'amount'	=> 'required|numeric',
-		'deadline'  => 'required'
+		'deadline'  => 'required',
+		'budget' 	=> 'mimes:pdf'
 	);
 
 	public static $messages   = array(

@@ -10,8 +10,7 @@ class Jobs_Controller extends Base_Controller
 
 		return View::make('job.index')
 			->with(array(
-				"jobs" => $jobs,
-				"sum" => 0
+				"jobs" => $jobs
 			)
 		);
 
@@ -56,12 +55,16 @@ class Jobs_Controller extends Base_Controller
 		$amount		 = Input::get('amount');
 		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
 		$deadline 	 = Input::get('deadline');
+		$budget 	 = Input::file('budget');
+
 
 		$validation  = Job::validate_post( array(
 				'client_id' => $client_id,
 				'name' 	 	=> $job_name,
 				'amount' 	=> $amount,
-				'deadline' 	=> $deadline) 
+				'deadline' 	=> $deadline,
+				'budget' 	=> $budget
+			) 
 		);
 
 		if ( $validation !== false ) {
@@ -75,16 +78,32 @@ class Jobs_Controller extends Base_Controller
 					->with_errors($validation->errors);
 		} 
 
+		/* Upload PDF File */
+		if ( $budget['name'] != '' ) 
+		{
+
+        	$is_uploaded = $this->upload_budget( 'budget', $budget );
+        	$budget_name = $budget['name'];
+
+        } 
+        else
+        	$budget_name = '';
+		
+
+
 		$job = Job::create(array(
-			"name" => $job_name,
-			"client_id" => $client_id,
-			"finished" => $finished,
-			"amount" => $amount,
-			"deadline" => new DateTime($deadline)
-		));
+				"name" => $job_name,
+				"client_id" => $client_id,
+				"finished" => $finished,
+				"amount" => $amount,
+				"deadline" => new DateTime($deadline),
+				"budget" => $budget_name
+			)
+		);
 
 		return Redirect::to_route("jobs");
 	}
+
 
 	public function put_update( $id ) {
 
@@ -95,23 +114,24 @@ class Jobs_Controller extends Base_Controller
 		$amount		 = Input::get('amount');
 		$finished	 = (Input::get('finished') == 1) ? 1 : 0;
 		$deadline 	 = new DateTime(Input::get('deadline'));
-
-
+		$budget 	 = Input::file('budget');
 
 		$validation  = Job::validate_post( array(
 				'client_id' => $client_id,
 				'name' 	 	=> $job_name,
 				'amount' 	=> $amount,
-				'deadline' 	=> $deadline
+				'deadline' 	=> $deadline,
+				'budget'	=> $budget
 				) 
 		);
 
         if ( $validation !== false ) {
 			$clients = Client::get();
-			dd($validation->errors);
 			return Redirect::to_route('edit_job', array('id' => $id) )
 					->with_errors($validation->errors);
         }
+        if ( $budget['name'] != '' )
+        	$is_uploaded = $this->upload_budget( 'budget', $budget );
 
         $job->name = $job_name;
         $job->client_id = $client_id;
@@ -119,8 +139,19 @@ class Jobs_Controller extends Base_Controller
         $job->finished = $finished;
         $job->deadline =$deadline;
 
+        if ( $budget['name'] != '' )
+        	$job->budget = $budget['name'];
+
         if ( $job->save() )
             return Redirect::to_route('jobs');
+	}
+
+	public function upload_budget( $input_name, $file )
+	{
+		if ( !is_array($file) )
+			die($file . ' must be an array');
+
+		return Input::upload( $input_name, Config::get('application.upload_path'), $file['name']);
 	}
 
 }
