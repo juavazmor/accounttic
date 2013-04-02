@@ -101,11 +101,14 @@ class Payments_Controller extends Base_Controller {
 		$method 	= Input::get('method');
 		$account 	= Input::get('account');
 
-        $validation = Payment::validate_post( array(
+		$validation = Payment::validate_post( array(
        		'concept' => $concept,
-       		'amount'  => $amount
+       		'amount'  => $amount,
+       		'job'	  => $job,
+       		'method'  => $method,
+       		'account' => $account
        		) 
-        );
+		);
 
         if ( $validation !== false ) {
 
