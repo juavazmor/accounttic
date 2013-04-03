@@ -43,7 +43,8 @@
 						<td>{{ $payment->method->name }}</td>
 						<td>{{ $payment->account->name }}</td>
 						<td>{{ $date_format }}</td>
-						<td><a href="/payments/{{ $payment->id }}/edit"><i class="icon-pencil"></i></a><a href="/payments/{{ $payment->id }}/remove" class="danger"><i class="icon-remove"></i></a></td>
+						<td><a href="/payments/{{ $payment->id }}/edit"><i class="icon-pencil"></i></a>
+						<a href="/payments/{{ $payment->id }}/remove" class="danger"><i class="icon-remove"></i></a></td>
 					</tr>
 
 				@endforeach		

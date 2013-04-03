@@ -1,5 +1,16 @@
 <?php
 
+
+// cost Resource
+Route::get('costs', array('as' => 'costs', 'uses' => 'costs@index'));
+Route::get('costs/(:any)', array('as' => 'cost', 'uses' => 'costs@show'));
+Route::get('costs/new', array('as' => 'new_cost', 'uses' => 'costs@new'));
+Route::get('costs/(:any)/edit', array('as' => 'edit_cost', 'uses' => 'costs@edit'));
+Route::get('costs/(:any)/remove', array('as' => 'remove_cost', 'uses' => 'costs@remove'));
+Route::post('costs', 'costs@create');
+Route::put('costs/(:any)', 'costs@update');
+Route::delete('costs/(:any)', 'costs@destroy');
+
 Route::get('login', array('as' => 'login', 'uses' => 'login@index'));
 Route::post('login', 'login@authenticate');
 Route::get('logout', 'login@logout');
